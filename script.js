@@ -99,7 +99,7 @@ function getPasswordOptions() {
   // Questions to ask users
   noOfChar = parseInt(
     prompt(
-      "How many characters would you like in the password? \n--> Minimum 10 and maximum 64! <--"
+      "How many characters would you like in the password? \n--> At least 10 characters but no more than 64! <--"
     )
   );
   // If the first answer is a number between 10 and 64 ask next questions
@@ -109,6 +109,15 @@ function getPasswordOptions() {
       isLowerAllowed = confirm("Are Lowercase letters allowed?");
       isNumericAllowed = confirm("Are Numeric characters allowed?");
       isSpecialAllowed = confirm("Are special characters allowed?");
+      if (!(
+        isUpperAllowed ||
+        isLowerAllowed ||
+        isNumericAllowed ||
+        isSpecialAllowed)
+      ) {
+        alert("No characters allowed in the password!");
+        return undefined;
+      }
     } else {
       alert("Please enter a number between 10 and 64!");
       isUpperAllowed = false;
