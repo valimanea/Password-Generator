@@ -109,11 +109,13 @@ function getPasswordOptions() {
       isLowerAllowed = confirm("Are Lowercase letters allowed?");
       isNumericAllowed = confirm("Are Numeric characters allowed?");
       isSpecialAllowed = confirm("Are special characters allowed?");
-      if (!(
-        isUpperAllowed ||
-        isLowerAllowed ||
-        isNumericAllowed ||
-        isSpecialAllowed)
+      if (
+        !(
+          isUpperAllowed ||
+          isLowerAllowed ||
+          isNumericAllowed ||
+          isSpecialAllowed
+        )
       ) {
         alert("No characters allowed in the password!");
         return undefined;
